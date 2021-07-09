@@ -1,0 +1,73 @@
+{
+	"action_sets": [
+		{
+			"name": "/actions/default",
+			"usage": "single"
+		}
+	],
+	"actions": [
+		{
+			"name": "/actions/default/in/TriggerPress",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/Default/in/TriggerPose",
+			"type": "vector1"
+		},
+		{
+			"name": "/actions/Default/in/GripPress",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/Default/in/MenuButtonClick",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/Default/in/TouchpadTouchLocation",
+			"type": "vector2"
+		},
+		{
+			"name": "/actions/Default/in/TouchpadClick",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/default/in/TouchpadTouch",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/default/in/TouchpadNorth",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/default/in/TouchpadSouth",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/default/in/TouchpadEast",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/default/in/TouchpadWest",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/default/in/Pose",
+			"type": "pose"
+		},
+		{
+			"name": "/actions/Default/out/Haptic",
+			"type": "vibration"
+		},
+		{
+			"name": "/actions/Default/out/Haptic",
+			"type": "vibration"
+		}
+	],
+	"default_bindings": [
+		{
+			"binding_url": "application_generated_unity_vrtestbed_exe_binding_vive_controller.json",
+			"controller_type": "vive_controller"
+		}
+	],
+	"localization": []
+}
