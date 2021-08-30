@@ -256,8 +256,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Headset: {fileID: 1828166930902811419}
-  RightController: {fileID: 1828166931377301817}
-  LeftController: {fileID: 1828166931485233132}
+  RightController: {fileID: 6236439054409281627}
+  LeftController: {fileID: 5285830168374677396}
   LHLinker: {fileID: 0}
   RHLinker: {fileID: 0}
 --- !u!1 &1828166930902811418

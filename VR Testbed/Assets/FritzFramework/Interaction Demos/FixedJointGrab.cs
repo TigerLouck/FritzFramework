@@ -15,7 +15,9 @@ namespace FritzFramework
 			grabbed = !grabbed;
 			if (grabbed)
 			{
-				controllingInteractable.LockLink(currentLink); //Impossible-to-fulfill configurations can cause the hitbox to exit while grabbed
+				// Child types can call this method as part of a larger two-to-one hand transfer process, so this might already be locked
+				if (!controllingInteractable.IsLocked(currentLink)) 
+					controllingInteractable.LockLink(currentLink); //Impossible-to-fulfill configurations can cause the hitbox to exit while grabbed
 
 				if (joint == null)
 				{

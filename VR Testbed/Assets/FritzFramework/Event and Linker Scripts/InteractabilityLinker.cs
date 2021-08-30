@@ -24,20 +24,22 @@ namespace FritzFramework
 		/// <param name="other">Struck collider</param>
 		private void OnTriggerEnter(Collider other)
 		{
-			// Get in parent searches struck object too, and returns that first if there is conflict
-			InteractableObject interactable = other.GetComponentInParent<InteractableObject>();
-			//It's possible under certain implementations for this to happen multiple times to the same object
-			bool alreadyPresent = currentInteractables.Contains(interactable);
-			if (interactable != null && !alreadyPresent)
+			// GetInParent allows for a hierarchichal interactable placement system, as this will get all interactables to the root.
+			InteractableObject[] interactables = other.GetComponentsInParent<InteractableObject>();
+			foreach (InteractableObject interactable in interactables)
 			{
-				interactable.currentLink = this;
-				interactable.OnLinkChanged.Invoke(thisSource, this, true);
-				currentInteractables.Add(interactable);
-				interactable.SetDisjointed(this, false);
-			}
-			else if (alreadyPresent)
-			{
-				interactable.SetDisjointed(this, false);
+				bool alreadyPresent = currentInteractables.Contains(interactable);
+				if (interactable != null && !alreadyPresent)
+				{
+					interactable.currentLink = this;
+					interactable.OnLinkChanged.Invoke(thisSource, this, true);
+					currentInteractables.Add(interactable);
+					interactable.SetDisjointed(this, false);
+				}
+				else if (alreadyPresent)
+				{
+					interactable.SetDisjointed(this, false);
+				}
 			}
 		}
 
